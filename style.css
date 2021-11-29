@@ -43,7 +43,7 @@
     position: absolute;
     z-index: 20;
     background: red;
-    animation: maps 20s infinite alternate;
+    animation: maps 20s infinite ;
 }
 
 
@@ -76,9 +76,9 @@
 
 @keyframes maps {
     0%   { transform: translateY(0%); }
-    20% { transform: translateX(110px); }
-    40% { transform: translateY(-140px) translateX(40px); }
-    60% { transform: translateY(-140px) translateX(-80px); }
-    80% {transform: translateY(0px) translateX(-80px);}
+    20% { transform: translateX(77px); }
+    40% { transform: translateY(-95px) translateX(31px); }
+    60% { transform: translateY(-95px) translateX(-50px); }
+    80% {transform: translateY(0px) translateX(-50px);}
     100% { transform: translateY(0px) translateX(0px); }
 }
