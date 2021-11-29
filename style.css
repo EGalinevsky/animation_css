@@ -1,0 +1,84 @@
+*{
+    margin: 40px 0px;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.body{
+    /* display: flex; */
+    text-align: center;
+    /* justify-content: center; */
+    position: relative;
+
+}
+
+.newEl{
+    position: absolute;
+    top: 20px;
+}
+
+#Group_7,
+#Group_6{
+    /* circle; */
+    animation: wheel 2s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Group_4,
+#Group_2{
+    /* man-bike; */
+    animation: bike 1s ease-in-out infinite alternate; 
+    transform-origin: bottom;
+}
+
+#Group_3{
+    animation: hat 1s ease-in-out infinite alternate;
+    transform-origin: top;
+    transform-box: fill-box;
+}
+
+#maps{
+    position: absolute;
+    z-index: 20;
+    background: red;
+    animation: maps 20s infinite alternate;
+}
+
+
+@keyframes wheel{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes bike{
+    from{
+        transform: rotateX(0deg);        
+    }
+    to{
+        transform: rotateX(20deg);
+    }
+}
+
+@keyframes hat {
+    from{
+        transform: translateY(0%) rotateZ(0deg);
+    } 
+    to{
+        transform: translateY(40%) rotateZ(20deg);
+    }
+}
+
+@keyframes maps {
+    0%   { transform: translateY(0%); }
+    20% { transform: translateX(110px); }
+    40% { transform: translateY(-140px) translateX(40px); }
+    60% { transform: translateY(-140px) translateX(-80px); }
+    80% {transform: translateY(0px) translateX(-80px);}
+    100% { transform: translateY(0px) translateX(0px); }
+}
