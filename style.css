@@ -1,84 +1,70 @@
 *{
-    margin: 40px 0px;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
 }
 
-.body{
-    /* display: flex; */
-    text-align: center;
-    /* justify-content: center; */
+body{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.form{
+    width: 50%;
     position: relative;
-
+    height: 50px;
+    overflow: hidden;
+    /* background: blue;     */
 }
 
-.newEl{
+.form input{
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;  
+    border: none;    
+    outline: none;
+}
+
+.form label{
     position: absolute;
-    top: 20px;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
 }
 
-#Group_7,
-#Group_6{
-    /* circle; */
-    animation: wheel 2s infinite linear;
-    transform-origin: center;
-    transform-box: fill-box;
-}
-
-#Group_4,
-#Group_2{
-    /* man-bike; */
-    animation: bike 1s ease-in-out infinite alternate; 
-    transform-origin: bottom;
-}
-
-#Group_3{
-    animation: hat 1s ease-in-out infinite alternate;
-    transform-origin: top;
-    transform-box: fill-box;
-}
-
-#maps{
+.form label::after{
+    content: "";
     position: absolute;
-    z-index: 20;
-    background: red;
-    animation: maps 20s infinite alternate;
+    left: 0px;
+    bottom: -2px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5fa8d3;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
 }
 
-
-@keyframes wheel{
-    from{
-        transform: rotateZ(0deg);
-    }
-    to{
-        transform: rotateZ(360deg);
-    }
+.content-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all .2s ease-in;
 }
 
-@keyframes bike{
-    from{
-        transform: rotateX(0deg);        
-    }
-    to{
-        transform: rotateX(20deg);
-    }
+.form input:focus + .label-name .content-name, form input:valid + .label-name .content-name{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
 }
 
-@keyframes hat {
-    from{
-        transform: translateY(0%) rotateZ(0deg);
-    } 
-    to{
-        transform: translateY(40%) rotateZ(20deg);
-    }
-}
-
-@keyframes maps {
-    0%   { transform: translateY(0%); }
-    20% { transform: translateX(110px); }
-    40% { transform: translateY(-140px) translateX(40px); }
-    60% { transform: translateY(-140px) translateX(-80px); }
-    80% {transform: translateY(0px) translateX(-80px);}
-    100% { transform: translateY(0px) translateX(0px); }
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after{
+    transform: translateX(0%);
 }
